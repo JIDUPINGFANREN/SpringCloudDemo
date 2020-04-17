@@ -1,0 +1,28 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: microservicecloud-zuul-gateway  #应用名不能有下划线
+
+zuul: 
+ prefix: /changping   #利用zuul给应用名的别名加一个前缀
+ ignored-services: "*"   #加"*"之后就可以隐藏所有具体的应用名，就无法用它们来访问，而只能通过别名访问。
+ routes: 
+  myuser.serviceId: microservicecloud-user
+  myuser.path: /myuser/**
+
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka  
+  instance:
+    instance-id: gateway_9527.com   #实例名可以有下划线
+    prefer-ip-address: true 
+ 
+info:
+  app.name: changping_microcloud
+  company.name: www.changping.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

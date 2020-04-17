@@ -1,0 +1,4 @@
+com\changping\springcloud\service\UserClientServiceFallbackFactory.class
+com\changping\springcloud\service\UserClientServiceFallbackFactory$1.class
+com\changping\springcloud\entities\User.class
+com\changping\springcloud\service\UserClientService.class
